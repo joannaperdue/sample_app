@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I am Joanna Perdue and I am studying web development and programming.
 
-Things you may want to cover:
+Insert info about app:
 
-* Ruby version
+* lorem ipsum
 
-* System dependencies
+* lorem ipsum
 
-* Configuration
+* lorem ipsum
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* lorem ipsum
 
 * ...

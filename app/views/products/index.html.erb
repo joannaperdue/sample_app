@@ -6,8 +6,8 @@
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-sm-2 col-md-4">
-        <%= image_tag("blue_bike.jpg", class: "my-image") %>
-        <a href="#"><h1><%= red_bike.jpg %></h1></a>
+        <%= image_tag("red_bike.jpg", class: "my-image") %>
+        <a href="#"><h1><%= product.name %></h1></a>
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
         <h4>$<%= product.price %></h4><br/>

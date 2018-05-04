@@ -1,4 +1,5 @@
 class SimplePagesController < ApplicationController
+  layout "static"
   def index
   end
   def landing_page

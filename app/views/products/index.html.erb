@@ -1,13 +1,13 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
 
 <div class="container-fluid">
   <div class="row">
-    <% @products.each do |product| %>
-      <%= render partial: "product", locals: {product: product} %>
-    <%end%>
-        <div class="col-sm-2 col-md-4">
+    <div class="col-sm-2 col-md-4">
+      <% @products.each do |product| %>
+        <%= render product %>
           <%= image_tag(product.image_url, class: "my-image") %>
           <a href="#"><h1><%= product.name %></h1></a>
           <p><%= product.description %></p>
@@ -22,4 +22,5 @@
 </div>
 
 <br>
+
 <%= link_to 'New Product', new_product_path %>

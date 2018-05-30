@@ -13,28 +13,28 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control", placeholder: "Enter Product Name" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control", placeholder: "Enter Product Description" %>
   </div>
 
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.text_field :image_url, class:"form-control", placeholder: "Enter Image URL" %>
   </div>
 
   <div class="field">
-    <%= form.label :color %><br>
-    <%= form.text_field :colour %>
+    <%= form.label :color %>
+    <%= form.text_field :colour, class:"form-control", placeholder: "Enter Product Color" %>
   </div>
 
   <div class="field">
-    <%= form.label :price %><br>
-    <%= form.text_field :price %>
-  </div>
+    <%= form.label :price %>
+    <%= form.text_field :price, class:"form-control", placeholder: "Enter Price" %>
+  </div><br>
 
   <div class="actions">
     <%= form.submit %>

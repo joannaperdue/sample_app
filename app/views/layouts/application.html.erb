@@ -36,11 +36,12 @@
                 <li><%= link_to "Products", products_path %></li>
                 <li><%= link_to "Orders", orders_path %></li>
               </ul>
-              <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
-                <%= form.label :q, 'Search' %>
-                <%= form.text_field :q, id: 'q', value: params[:q] %>
-                <%= form.submit 'Search' %>
-              <% end %>
+              <div class="search">
+                <%= form_tag("/products", method: "get") do %>
+                      <%= text_field_tag(:q, nil, style: "color: black;") %>
+                      <%= submit_tag("Search", class: 'btn btn-danger') %>
+                    <% end %>
+            </div>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

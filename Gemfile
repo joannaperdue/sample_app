@@ -70,5 +70,6 @@ gem 'jquery-rails'
 group :production do
   gem 'pg'
 
-gem 'devise'
 end
+
+gem 'devise'

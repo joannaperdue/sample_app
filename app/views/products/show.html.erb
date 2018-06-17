@@ -1,12 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<div class="row" data-product-id="<%= @product.id %>">
-  <div class="col-md-6 col-xs-12">
-    <div>
-        <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
-    </div>
-  </div>
-
+<div class="row">
   <div class="col-md-6 col-xs-12">
   <p>
     <strong>Name:</strong>
@@ -16,6 +9,11 @@
   <p>
     <strong>Description:</strong>
     <%= @product.description %>
+  </p>
+
+  <p>
+    <strong>Image url:</strong>
+    <%= @product.image_url %>
   </p>
 
   <p>
@@ -33,7 +31,6 @@
     <%= @product.highest_rating_comment %>
   </p>
 
-  </div>
 </div>
 
   <%= link_to 'Edit', edit_product_path(@product) %> |

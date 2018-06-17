@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
   <div class="col-md-6 col-xs-12">
+    <div>
+      <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
+    </div>
+  </div>
+  <div class="col-md-6 col-xs-12">
   <p>
     <strong>Name:</strong>
     <%= @product.name %>
@@ -9,11 +14,6 @@
   <p>
     <strong>Description:</strong>
     <%= @product.description %>
-  </p>
-
-  <p>
-    <strong>Image url:</strong>
-    <%= @product.image_url %>
   </p>
 
   <p>
@@ -26,7 +26,19 @@
     <%= @product.price %>
   </p>
 
-  <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment %></p>
+</div>
+<br/>
+<hr>
+<div class="row">
+  <div class="col-md-6 col-xs-12 text-center">
+    <%= render partial: "new_comment" %>
+  </div>
+  <div class="col-md-12 col-xs-12">
+    <%= render partial: "comments" %>
+  </div>
+
+</div>
 
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>
+</div>

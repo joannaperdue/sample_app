@@ -21,3 +21,4 @@ $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
+//= require jquery.raty.js

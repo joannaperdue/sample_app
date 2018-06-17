@@ -26,18 +26,13 @@
     <%= @product.price %>
   </p>
 
-  <p>
-    <strong>Reviews:</strong>
-    <%= @product.highest_rating_comment %>
-  </p>
-
 </div>
 
 <div class="row">
   <div class="col-md-6 col-xs-12 text-center">
     <%= render partial: "new_comment" %>
   </div>
-  <div class="col-md-6 col-xs-12 text-center">
+  <div class="col-md-12 col-xs-12 text-center">
     <%= render partial: "comments" %>
   </div>
 

@@ -26,9 +26,10 @@
     <%= @product.price %>
   </p>
 
+  <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div> </p>
+
 </div>
-<br/>
-<hr>
+
 <div class="row">
   <div class="col-md-6 col-xs-12 text-center">
     <%= render partial: "new_comment" %>

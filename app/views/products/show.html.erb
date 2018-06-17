@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-md-6 col-xs-12">
+  <div>
+      <%= image_tag(@product.image_url, class: "img-responsive product-show-image img-zoom", data_zoom_image: @product.image_url) %>
+    </div>
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -8,11 +12,6 @@
 <p>
   <strong>Description:</strong>
   <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
 </p>
 
 <p>
@@ -25,5 +24,12 @@
   <%= @product.price %>
 </p>
 
+<p>
+  <strong>Reviews:</strong>
+  <%= @product.highest_rating_comment %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+</div>

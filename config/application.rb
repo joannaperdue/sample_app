@@ -12,6 +12,7 @@ module SampleApp
     config.load_defaults 5.2
 
     config.assets.initialize_on_precompile = false
+    config.assets.compress = true
     config.generators.system_tests = nil
 
     # Settings in config/environments/* take precedence over those specified here.

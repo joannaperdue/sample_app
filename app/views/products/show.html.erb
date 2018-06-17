@@ -25,8 +25,17 @@
     <strong>Price:</strong>
     <%= @product.price %>
   </p>
+  
+  <p>
+    Average Rating:
+    <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div>
+  </p>
 
-  <p class="product-info-text"> Highest Rating: <%= @product.highest_rating_comment %></p>
+  <%= render 'new_comment' %>
+  <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
+  <%= render 'comments' %>
+
+  <%= will_paginate @comments %>
 
   <%= link_to 'Edit', edit_product_path(@product) %> |
   <%= link_to 'Back', products_path %>

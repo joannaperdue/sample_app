@@ -11,6 +11,9 @@
       </div>
     </div>
   </div>
+
+ <%= will_paginate @products, :page_links =>true %>
+
   <br>
 
 <%= link_to 'New Product', new_product_path %>

@@ -15,10 +15,10 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
+//= require jquery.raty
 //= require_tree .
 
 $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
-//= require jquery.raty.js

@@ -17,6 +17,7 @@
 //= require jquery3
 //= require jquery.raty
 //= require_tree .
+//= require rails.validations
 
 $('#myTabs a').click(function (e) {
   e.preventDefault()

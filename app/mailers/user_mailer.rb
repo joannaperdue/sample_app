@@ -1,16 +1,10 @@
 class UserMailer < ApplicationMailer
-  def welcome (current_user)
-    unless current_user.nil?
-      mail(
-        :from => "bikeberlincentral.com",
-        :to => current_user.email,
-        :subject => "Thank you for signing up."
-      )
-    else
-      mail(
-        :from => "bikeberlincentral.com",
-        :to => "test@mail.com",
-        :subject => "Thank you for signing up."
-      )
-    end
+  default from: "from@example.com"
+
+  def contact_form(email, name, message)
+  @message = message
+    mail(from: email,
+         to: 'joanna.perdue@verizon.net',
+         subject: "A new contact form message from #{name}")
   end
+end

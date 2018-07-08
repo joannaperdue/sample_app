@@ -1,23 +1,8 @@
-def create
-  build_resource
-
-  if resource.valid?
-    begin
-      resource.transaction do
-        resource.save!
-      end
-    UserMailer.welcome(resource).deliver
-    flash[:notice] = "Successfully registered"
-    sign_in(resource)
-    respond_with resource, :location => after_sign_up_path_for(resource)
-  rescue ActiveRecord::RecordInvalid => invalid
-    flash[:notice] = " Please try again"
-    clean_up_passwords resource
-    respond_with resource
+class UserRegistrationsController < Devise::RegistrationsController
+  def create
+    super
+    if @user.persisted?
+      UserMailer.welcome(@user).deliver_now
+    end
   end
-else
-  clean_up_passwords resource
-  respond_with resource
-end
-
 end

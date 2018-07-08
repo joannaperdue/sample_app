@@ -47,7 +47,7 @@
               </ul>
               <div class="search">
                 <%= form_tag("/products", method: "get") do %>
-                      <%= text_field_tag(:q, nil, style: "color: black;") %>
+                      <%= text_field_tag(:q, params[:q], style: "color: black;") %>
                       <%= submit_tag("Search", class: 'btn btn-danger') %>
                     <% end %>
             </div>

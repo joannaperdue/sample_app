@@ -1,5 +1,11 @@
 class UserMailer < ApplicationMailer
-  default from: "from@example.com"
+
+  default from: "admin@bikeberlincentral.com"
+    def send_enabled_message(user)
+      @user = user
+      mail(:to => user.email, :subject => "Welcome to Bike Berlin Central!")
+    end
+
 
   def contact_form(email, name, message)
   @message = message

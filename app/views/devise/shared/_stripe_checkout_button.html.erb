@@ -1,4 +1,3 @@
-<form action="your-server-side-code" method="POST">
 <script
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
@@ -7,4 +6,3 @@
   data-description="<%=@product.description%>"
   data-amount="<%=@product.price*100 %>">
 </script>
-</form>

@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    byebug
     @orders = Order.includes(:product).all
   end
 

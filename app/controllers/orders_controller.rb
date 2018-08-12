@@ -2,7 +2,9 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    byebug
+    if !Rails.env.production?
+      byebug
+    end
     @orders = Order.includes(:product).all
   end
 

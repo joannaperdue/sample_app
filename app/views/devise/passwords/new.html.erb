@@ -6,6 +6,7 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.password_field :current_password, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="actions">

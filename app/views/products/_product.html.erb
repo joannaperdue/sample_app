@@ -1,12 +1,14 @@
-<div class="col-sm-2 col-md-4">
-  <a href="#"><h1><%= product.name %></h1></a>
-  <p><%= product.description %></p>
-  <p>Color: <%= product.color %></p>
-  <h4>$<%= product.price %></h4><br/>
-  <% if product.image_url %>
-    <%= image_tag(product.image_url, class: "my-image") %>
-  <% end %>
-  <%= link_to 'Show', product %>
-  <%= link_to 'Edit', edit_product_path(product) %>
-  <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+<% cache product do %>
+  <div class="col-sm-2 col-md-4">
+    <a href="#"><h1><%= product.name %></h1></a>
+    <p><%= product.description %></p>
+    <p>Color: <%= product.colour %></p>
+    <h4>$<%= product.price %></h4><br/>
+    <% if product.image_url %>
+      <%= image_tag(product.image_url, class: "my-image") %>
+    <% end %>
+    <%= link_to 'Show', product %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>

@@ -28,7 +28,7 @@
   <% if current_user %>
   <p>Average Rating: <div class="rated" id="average-rating" data-score="<%= @product.average_rating %>"></div> </p>
   <%= form_with(url: '/payments/create') do |form| %>
-      <p><%= render partial: "shared/stripe_checkout_button" %> text-align:center</p>
+      <p><%= render partial: "shared/stripe_checkout_button" %></p>
       <%= hidden_field_tag(:product_id, @product.id) %>
     <% end %>
   <% end %>

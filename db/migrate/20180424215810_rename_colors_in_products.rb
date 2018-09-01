@@ -1,5 +1,5 @@
 class RenameColorsInProducts < ActiveRecord::Migration[5.2]
   def change
-    rename_column :products, :color, :color
+    rename_column :products, :colour, :color
   end
 end

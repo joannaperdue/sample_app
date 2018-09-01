@@ -1,7 +1,7 @@
 <div class="col-sm-2 col-md-4">
   <a href="#"><h1><%= product.name %></h1></a>
   <p><%= product.description %></p>
-  <p>Color: <%= product.color %></p>
+  <p>Color: <%= product.colour %></p>
   <h4>$<%= product.price %></h4><br/>
   <% if product.image_url %>
     <%= image_tag(product.image_url, class: "my-image") %>

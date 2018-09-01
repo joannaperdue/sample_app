@@ -5,14 +5,13 @@
 <div class="products">
   <div class="container-fluid">
     <div class="row">
-      <% cache @products do %>
-        <% @products.each do |product| %>
+      <% cache(cache_key_for_products) do %>
           <%= render product %>
         <% end %>
       <% end %>
     </div>
   </div>
-</div>
+  </div>
 
  <%= will_paginate @products, :page_links =>true %>
 

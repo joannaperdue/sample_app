@@ -13,6 +13,8 @@
     </div>
   </div>
   </div>
+  Rails.cache.write("foo", "bar")
+puts Rails.cache.read("foo")
 
  <%= will_paginate @products, :page_links =>true %>
 

@@ -17,7 +17,6 @@ class UserMailer < ApplicationMailer
   def order_notification(user,order)
     @appname = "Bike Berlin Central"
     @user = user
-    @product_name = order.product.name
     mail(to: user.email, subject: "Your order at #{@appname}")
   end
 end

@@ -12,6 +12,7 @@ class PaymentsController < ApplicationController
                 currency: "usd",
                 source: token,
                 description: params[:stripeEmail]
+                receipt_email: @user.email
             )
 
         if charge.paid
@@ -20,7 +21,8 @@ class PaymentsController < ApplicationController
               user_id: @user.id,
               total: @product.price
             )
-            flash[:success] = "Your payment was processed successfully"
+            UserMailer.order_created(@user,@product).deliver_now
+            @notice = "Your payment was processed successfully."
         end
 
         rescue Stripe::CardError => e

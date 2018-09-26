@@ -26,7 +26,7 @@ describe ProductsController, type: :controller do
       sign_in @user
     end
     it 'loads new product page' do
-      get :new, params: {id: @product}
+      get :new,
       expect(response).to be_ok
     end
   end

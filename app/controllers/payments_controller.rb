@@ -20,7 +20,7 @@ class PaymentsController < ApplicationController
               user_id: @user.id,
               total: @product.price
             )
-            UserMailer.order_created(@user,@product).deliver_now
+            UserMailer.order_notification(@user,@order).deliver_now
             @notice = "Your payment was processed successfully."
         end
 

@@ -15,12 +15,12 @@ class PaymentsController < ApplicationController
             )
 
         if charge.paid
-            Order.create(
+            Order.create!(
               product_id: @product.id,
               user_id: @user.id,
               total: @product.price
             )
-            flash[:alert]= "Your payment was processed successfully."
+            flash[:alert]= "Your payment was processed successfully. Thanks for your order!"
             UserMailer.order_notification(@user,@order).deliver_now
 
         end

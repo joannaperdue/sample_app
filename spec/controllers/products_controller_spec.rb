@@ -2,22 +2,14 @@ require 'rails_helper'
 
 describe ProductsController, type: :controller do
   before do
-    @product = FactoryBot.create(:product)
     @user = FactoryBot.create(:user)
   end
 
   describe 'GET #index' do
-    it 'loads index' do
+    it 'loads index template' do
       get :index
       expect(response).to be_ok
       expect(response).to render_template('index')
-    end
-  end
-
-  context 'GET #show' do
-    it 'shows login page' do
-      get :show, params: {id: @product}
-      expect(response).to redirect_to new_user_session_path
     end
   end
 
@@ -25,14 +17,14 @@ describe ProductsController, type: :controller do
     before do
       sign_in @user
     end
-    it 'loads new product page' do
+    it 'redirects to login when not logged in' do
       get :new,
       expect(response).to be_ok
     end
   end
 
   context 'GET #edit' do
-    it 'loads login page' do
+    it 'shows login page' do
       get :edit, params: {id: @product.id}
       expect(response).to redirect_to new_user_session_path
     end
@@ -60,12 +52,6 @@ describe ProductsController, type: :controller do
       it "updates product and redirects" do
         patch :update, id: @product.id, product: { name: "berlinracerbike",  price: "5", description: 'fantastic'}
         expect(response).to be_redirect
-      end
-    end
-    context "with bad data" do
-      it "keeps product the same and redirects to login page" do
-        patch :update, id: @product.id, product: { name: "berlinracerbike", price: "five"}
-        expect(response).to redirect_to new_user_session_path
       end
     end
 
